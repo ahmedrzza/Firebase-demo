@@ -3,7 +3,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
 class Verify_Code extends StatefulWidget {
-  const Verify_Code({super.key});
+  String verificationId;
+  Verify_Code({super.key, required this.verificationId});
 
   @override
   State<Verify_Code> createState() => _Verify_CodeState();

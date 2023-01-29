@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Splash_Screen(),
+      home:const Splash_Screen(),
     );
   }
 }
