@@ -1,8 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutterfirebaseproject/screen/authentication/login_Screen.dart';
 import 'package:flutterfirebaseproject/utils/utils.dart';
 
@@ -14,12 +12,12 @@ class Sign_Up_Screen extends StatefulWidget {
 }
 
 class _Sign_Up_ScreenState extends State<Sign_Up_Screen> {
-   bool loading = false;
+  bool loading = false;
   final _formField = GlobalKey<FormState>();
   TextEditingController emailcontroller = TextEditingController();
   TextEditingController passwordcontroller = TextEditingController();
   FirebaseAuth auth = FirebaseAuth.instance;
-   @override
+  @override
   void dispose() {
     // TODO: implement dispose
     super.dispose();
@@ -46,6 +44,7 @@ class _Sign_Up_ScreenState extends State<Sign_Up_Screen> {
       });
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(

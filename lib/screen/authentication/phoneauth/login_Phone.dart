@@ -29,7 +29,9 @@ class _LoginWithPhoneNumberState extends State<LoginWithPhoneNumber> {
           children: [
             TextFormField(
               controller: phoneNumberController,
+              keyboardType: TextInputType.number,
               decoration: const InputDecoration(
+                
                 prefixIcon: Icon(
                   Icons.phone,
                 ),
@@ -40,9 +42,17 @@ class _LoginWithPhoneNumberState extends State<LoginWithPhoneNumber> {
               padding: const EdgeInsets.only(top: 20),
               child: ElevatedButton(
                 onPressed: () {
+                  loading = loading;
+                  setState(() {
+                    loading = true;
+                  });
                   auth.verifyPhoneNumber(
                       phoneNumber: phoneNumberController.text,
-                      verificationCompleted: (_) {},
+                      verificationCompleted: (_) {
+                        setState(() {
+                          loading = false;
+                        });
+                      },
                       verificationFailed: (e) {
                         Utils().toastMessage(e.toString());
                       },
@@ -55,9 +65,15 @@ class _LoginWithPhoneNumberState extends State<LoginWithPhoneNumber> {
                             ),
                           ),
                         );
+                        setState(() {
+                          loading = false;
+                        });
                       },
                       codeAutoRetrievalTimeout: (e) {
                         Utils().toastMessage(e.toString());
+                        setState(() {
+                          loading = false;
+                        });
                       });
                 },
                 style: ElevatedButton.styleFrom(

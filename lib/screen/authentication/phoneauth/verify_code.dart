@@ -11,6 +11,7 @@ class Verify_Code extends StatefulWidget {
 }
 
 class _Verify_CodeState extends State<Verify_Code> {
+  final phonenumbercontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +19,17 @@ class _Verify_CodeState extends State<Verify_Code> {
         title: Text('Verify'),
       ),
       body: Column(
-        children: [],
+        children: [
+          SizedBox(
+            height: 50,
+          ),
+          TextFormField(
+            decoration: InputDecoration(
+              
+            ),
+            
+          )
+        ],
       ),
     );
   }
